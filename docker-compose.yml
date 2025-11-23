@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  streamlit:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    volumes:
+      - ./vectorstore:/app/vectorstore
+      - ./data:/app/data
+    restart: unless-stopped
+
