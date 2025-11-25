@@ -30,7 +30,7 @@ def set_custom_prompt(custom_prompt_template):
 
 
 def main():
-    st.title("Ask Chatbot!")
+    st.title("Ask Medibot!")
 
     if 'messages' not in st.session_state:
         st.session_state.messages = []
@@ -38,7 +38,7 @@ def main():
     for message in st.session_state.messages:
         st.chat_message(message['role']).markdown(message['content'])
 
-    prompt=st.chat_input("Pass your prompt here")
+    prompt=st.chat_input("Ask anything about disease starting with 'C' ")
 
     if prompt:
         st.chat_message('user').markdown(prompt)
